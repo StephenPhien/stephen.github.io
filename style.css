@@ -1,0 +1,318 @@
+*{
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+body{
+  margin: 0;
+  background-color:#e6e3d3;
+  color:#efb853;
+  font-family: sans-serif;
+}
+.vid{
+  height: 570px;
+  background-color:#e6e3d3;
+  filter: brightness(0.93);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+video{
+  width: 100vw;
+  left: calc(-50vw + 50%);
+  filter:brightness(0.4);
+  overflow: hidden;
+  object-fit: cover;
+  flex: 0 0 auto;
+  z-index: -1;
+  position: absolute;
+}
+a{ 
+  color:#efb853;
+  text-decoration:none;
+}
+.overlay-text{
+  position: relative;
+  z-index: 1;
+  color: #efb853;
+  text-align: center;
+  font-size: 2rem;
+  padding-top: 150px;
+}
+.overlay-video-text {
+  position: relative;
+  z-index: 1;
+  color: #efb853;
+  text-shadow: -5px 0 rgb(255, 0, 0), 0 5px rgb(255, 0, 0), 5px 0 rgb(255, 0, 0), 0 -5px rgb(255, 0, 0);
+  text-align: center;
+  font-size: 5rem;
+  padding-top: 10px;
+}
+.container-list{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 2em;
+}
+.list{
+  text-shadow: 2px 2px #3e4f50;
+  font-size: 24px;
+  font-weight: 800;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+}
+.shop{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; 
+}
+ul li{
+  display: inline-block;
+}
+.potrait{
+  display: flex;
+  justify-content: center;
+  margin: 2em auto;
+  height: 400px;
+  width: auto;
+}
+li img{
+  width: 200px;
+  height: 200px;
+}
+h2{
+  text-shadow: 2px 4px #3e4f50;
+  font-size: 45px;
+  text-align: center;
+}
+h3{
+  color: #3e4f50;
+  font-size: 24px;
+  text-align: center;
+  text-shadow: black;
+  margin-top: 1em;
+  margin-bottom: -15px;
+}
+.btn{
+  display: block;
+  margin: 2em auto;
+  padding: 1em 2em;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  background-color: #3498db;
+  color: white;
+  cursor: pointer;
+}
+.btn:hover{
+  background-color: #2980b9;
+}
+.desc {
+  box-shadow: 10px 10px 5px #3e4f50;
+  width: 950px;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  margin-top: 2em;
+  padding: 2em;
+  background-color:#e53c29;
+  font-weight: 800;
+  text-align: center;
+  font-size: 18px;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  border-radius: 20px;
+  line-height: 1.6;
+}
+.dropbtn {
+  border-radius: 10px;
+  background-color: #e81818;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #e81818a0;
+}
+.dropdown-shop {
+  display: inline-block;
+}.dropdown-series {
+  display: inline-block;
+}
+.dropdown-content {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -10px);
+  opacity: 0;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: #e53c29;
+  border-radius: 15px;
+  padding: 10px;
+  min-width: fit-content;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.centerbtn {
+  display: flex;
+  justify-content: center;
+  margin: 2em 0;
+}
+.dropdown-content.show {
+  opacity: 1;
+  transform: translate(-50%,0);
+  pointer-events: auto;
+}
+.dropdown-content a:hover {
+  filter: brightness(0.8);
+}
+.dropdown-content img {
+  margin: 0 5px;
+  border-radius: 5px;
+}
+.container {
+  position: relative;
+  height: 450px;
+  overflow: hidden;
+}
+.container-vid {
+  position: relative;
+  height: 570px;
+  overflow: hidden;
+}
+.bg-img {
+  border-radius: 15px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 1;
+}
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: #ffffff;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.timeline-container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+/* The circles on the timeline */
+.timeline-container::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: #ffffff;
+  border: 4px solid #FF9F55;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+  left: 0;
+}
+
+/* Place the container to the right */
+.right {
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid rgb(255, 255, 255);
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -16px;
+}
+
+/* The actual content */
+.content {
+  padding: 3px;
+  background-color: rgb(255, 255, 255);
+  position: relative;
+  border-radius: 6px;
+}
+.content p{
+  text-align: center;
+  font-size: 24px;
+  color: #e53c29;
+  text-shadow: 1px 1px #efb853;
+  font-weight: 750;
+  margin-bottom: 1em;
+}
+.gundam-title{
+  display: block;
+  margin: 0 auto;
+  width: 50%;
+  height: auto;
+}
+img[src="./images/gundam timeline/gundamibo.jpg"]{
+  margin-bottom: 2em;
+}
+#link{
+  font-size: 36px;
+  font-weight: 500px;
+  text-shadow: 1px 1px #3e4f50;
+  color: #efb853;
+}
